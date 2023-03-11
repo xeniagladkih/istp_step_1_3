@@ -1,21 +1,160 @@
-<nav class="navbar navbar-expand-lg navbar-dark indigo">
-    <a class="navbar-brand" href="{% url 'index' %}">Home</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'about' %}">For customers</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'menu' %}">Menu</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'dashboard' %}">Restaurant Login</a>
-        </li>
-      </ul>
+<header>
+  <div class="logo">
+    <a href="/" class="main-logo"><img src="https://ninjasushi.com.ua/img/ninja-logo.svg"></a>
+    <a href="/" class="mobile-logo"><img src="https://ninjasushi.com.ua/img/mobile-logo.svg"></a>
+  </div>
+  <div class="cities">
+    <div class="current">
+      <div class="current-city">
+        <img src="https://ninjasushi.com.ua/img/ua.svg" class="city-flag">
+        <span>Kyiv</span>
+      </div>
     </div>
-  </nav>
+    <div class="city-wrap">
+      <div class="city-group">
+        <img src="https://ninjasushi.com.ua/img/ua.svg" class="city-flag">
+        <a href="javascript:void()">Kyiv</a><a href="#">Dnipro</a><a href="#">Lviv</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav">
+    <a href="/">Home</a>
+    <a href="{% url 'menu' %}">Menu</a>
+    <a href="{% url 'order' %}">Delivery</a>
+    <a href="{% url 'about' %}">For customers</a>
+    <a href="#">News</a>
+  </div>
+  <div class="tel">
+    <a href="#" class="title">
+      <img src="https://ninjasushi.com.ua/img/phone.svg">
+    </a>
+  </div>
+  <div class="fav">
+    <a class="title log-in">
+      <img src="https://ninjasushi.com.ua/img/heart.svg">
+      <span>Favorites</span>
+    </a>
+  </div>
+  <div class="account">
+    <span class="title">
+      <img src="https://ninjasushi.com.ua/img/people.svg">
+      <span>Personal account</span>
+    </span>
+    <div class="account-wrap">
+        <span>
+        <img src="https://ninjasushi.com.ua/img/people.svg">
+        <span>Personal account</span>
+      </span>
+      <a href="{% url 'account_login' %}" class="title">
+        <div class="btn log-tg">Log in</div>
+      </a>
+      <a href="{% url 'account_logout' %}" class="title">
+        <div class="link reg-tg">Sign up</div>
+      </a>
+    </div>
+  </div>
+  <div class="lang">
+    <span class="lg current">EN</span>
+    <div class="lang-wrap">
+      <a href="javascript:void()" class="lg">EN</a>
+      <a href="#" class="lg">UA</a>
+    </div>
+  </div>
+</header>
+
+<aside class="cats-container">
+  <div class="cats">
+    <div class="cat-link">
+      <a href="#">
+        <img src="https://ninjasushi.com.ua/img/roll.svg">
+        <span>Rolls</span>
+      </a>
+    </div>
+    <div class="cat-link"> 
+      <a href="#">
+        <img src="https://ninjasushi.com.ua/img/sushi.svg">
+        <span>Sushi</span>
+      </a>
+    </div>
+    <div class="cat-link">
+      <a href="#">
+        <img src="https://ninjasushi.com.ua/img/set.svg">
+        <span>Sets</span>
+      </a>
+    </div>
+    <div class="cat-link">
+      <a href="#">
+        <img src="https://ninjasushi.com.ua/img/burr.svg">
+        <span>Appetizers</span>
+      </a>
+    </div>
+    <div class="cat-link">
+      <a href="#">
+        <img src="https://ninjasushi.com.ua/img/drinks.svg">
+        <span>Drinks</span>
+      </a>
+    </div>
+    <div class="cat-link">
+      <a href="#">
+        <img src="https://ninjasushi.com.ua/img/sia.svg">
+        <span>Sauces</span>
+      </a>
+    </div>
+  </div>
+</aside>
+
+<aside class="cart-container">
+  <div class="cart">
+    <div class="content" id="scroll-content" data-simplebar="init">
+      <div class="empty">
+        <div class="title">
+          <img src="https://ninjasushi.com.ua/img/cart.svg">
+          <div class="text">
+            Add a product to cart<br>Everything is very delicious here.
+          </div>
+        </div>
+        <div class="links">
+          <a href="#">Rolls</a>
+          <a href="#">Sushi</a>
+          <a href="#">Sets</a>
+          <a href="#">Appetizers</a>
+          <a href="#">Drinks</a>
+          <a href="#">Sauces</a>
+        </div>
+        <div class="order-message">
+          <span></span>
+          <a class="order-link" href="#">Order history</a>
+        </div>
+      </div>
+    </div>
+    <div class="total">
+      <div class="min-sum">
+        Minimum order sum <span>500</span> uah
+      </div>
+      <div class="total-wrap">
+        <div class="price">
+          <span class="small">
+            Total:
+          </span>
+          <span class="money">
+              0<span>uah</span>
+          </span>
+        </div>
+        <div class="order-btn inactive">Checkout</div>
+      </div>
+    </div>
+      <div class="preloader active">
+        <div class="round">
+          <div class="border">
+            <div class="border-black"></div>
+            <div class="border-gray"></div>
+          </div>
+          <div class="orange-wrap">
+            <div class="orange"></div>
+          </div>
+        </div>
+      </div>
+  </div>
+</aside>
+
+

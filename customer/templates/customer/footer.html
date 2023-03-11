@@ -1,6 +1,43 @@
-<footer class="page-footer font-small indigo fixed-bottom">
-    <div class="footer-copyright text-center py-3">&copy; 2023 Copyright:
-        <a href="http://localhost:8000"></a>
-        <a class="ml-3" href="#"> © Ninja Sushi. All rights reserved.</a>
+<footer>
+    <div class="terms">
+        <img src="https://ninjasushi.com.ua/img/footer.svg">
+        <br>
+            <span class="small">© Ninja Sushi. All rights reserved.</span>
+    </div>
+    <div class="links">
+        <span class="small">Navigation:</span>
+        <div class="link-group">
+            <a href="/">Home</a>
+            <a href="{% url 'menu' %}">Menu</a>
+            <a href="#">Delivery</a>
+            <a href="{% url 'about' %}">For customers</a>
+            <a href="#">News</a>
+        </div>
+    </div>
+    <div class="tel">
+        <div class="tel-group">
+            <span class="small">Checkout:</span>
+            <a class="binct-phone-number-1" href="#">+38 (067) 000 00 000</a>
+            <a class="binct-phone-number-2" href="#">+38 (066) 000 00 000</a>
+            <a class="binct-phone-number-3" href="#">+38 (093) 000 00 000</a>
+        </div>
+        <div class="pay-icons">
+            <div class='pay-icons'>
+                <img src='https://ninjasushi.com.ua/img/mc.svg'><img src='https://ninjasushi.com.ua/img/visa.svg'><img src='https://ninjasushi.com.ua/img/privat.svg'>
+            </div>
+        </div>
+    </div>
+    <div class="social">
+        <div class="time-box">
+            <span class="small">Working hours:</span>
+            <div class="time-wrap">from&nbsp;10:00 to&nbsp;21:30</div>
+        </div>
+        <div class="social-box">
+            <br>
+            <span class="small">Contact us</span>
+            <div class="social-links" style="margin:0px;">
+                <a href="#" target="_blank"><img style="height:24p;width:24px" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg"></a>
+            </div>
+        </div>
     </div>
 </footer>

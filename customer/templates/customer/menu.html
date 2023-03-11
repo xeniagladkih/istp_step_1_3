@@ -1,15 +1,13 @@
 {% extends 'customer/base.html' %}
 
 {% block content %}
-<div class="container">
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-6 col-sm-12 text-center">
-            <h1>What's On Our Menu?</h1>
-        </div>
+<section class="page-content category-page">
+    <div class="direction">
+    <a href="/" class="direction-home">Home</a> <span>/</span> <a href="{% url 'menu' %}" class="direction-home">Menu</a>
     </div>
-
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-8 col-sm-12 text-center">
+    <div class="main-title h2">
+        <h2>Menu</h2>
+        <div class="sort">
             <form method="GET" action="{% url 'menu-search' %}">
                 <div class="md-form mt-0 active-cyan-2">
                     <input class="form-control" name="q" type="text" placeholder="Search Our Menu" aria-label="Search" value="{{ request.GET.q }}">
@@ -17,16 +15,52 @@
             </form>
         </div>
     </div>
-
-    <div class="row justify-content-center">
-        {% for item in menu_items %}
-        <div class="col-md-4 col-sm-12 text-center mb-5">
-            <img class="rounded" src="{{ item.image.url }}" width="300" height="300">
-            <h5 class="mt-3">{{ item.name }}</h5>
-            <p>Price: {{ item.price }}</p>
-            <p>{{ item.description }}</p>
+    <div class="tabs">
+        <div class="cat-wrap active" id="tab1">
+            <div class="grid">
+                <div class="gutter-sizer"></div>
+                
+                {% for item in menu_items %}
+                <div class="cat-slide swiper-slide">
+                    <div class="cat-image">
+                        <a href="#">
+                        <img src="{{ item.image.url }}" class="image" title="{{ item.name }}" alt="{{ item.name }}">
+                        </a>
+                        <div class="info-box">
+                            <div class='info-type'>
+                                <span class='info-name'>Calories</span>
+                                <span class='info-value'>0 kcal</span>
+                            </div>
+                            <div class='info-type'>
+                                <span class='info-name'>Carbs</span>
+                                <span class='info-value'>0 g</span>
+                            </div>
+                            <div class='info-type'>
+                                <span class='info-name'>Proteins</span>
+                                <span class='info-value'>0 g</span>
+                            </div>
+                            <div class='info-type'>
+                                <span class='info-name'>Fat</span>
+                                <span class='info-value'>0 g</span>
+                            </div>
+                        </div>
+                        <div class="exp"></div>
+                    </div>
+                    <div class="cat-slide-content">
+                        <div class="cat-slide-name">
+                            <a href="#">{{ item.name }}</a>
+                        </div>
+                        <div class="cat-slide-desc">
+                            {{ item.description }}
+                        </div>
+                        <div class="cat-slide-buy  item{{ item.pk }}" id="{{ item.pk }}">
+                            <div class="btn button added ajax" command="incart" id="{{ item.pk }}">Add to cart</div>
+                            <div class="price">{{ item.price }} uah</div>
+                        </div>
+                    </div>
+                </div> 
+                {% endfor %}
+            </div>
         </div>
-        {% endfor %}
     </div>
-</div>
 {% endblock content %}
